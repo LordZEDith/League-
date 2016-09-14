@@ -10,15 +10,15 @@ namespace UltimateCarry.Champions
 {
     internal class Ahri : Champion
     {
-        private const float _spellQSpeed = 2500;
+        private const float _spellQSpeed = 1700;
         private const float _spellQSpeedMin = 400;
-        private const float _spellQFarmSpeed = 1600;
+        private const float _spellQFarmSpeed = 1700;
         private readonly Menu _menu;
         private readonly Spell _spellE;
         private readonly Spell _spellQ;
         private readonly Spell _spellR;
         private readonly Spell _spellW;
-        private Items.Item _itemDFG;
+        
 
         public Ahri()
         {
@@ -52,18 +52,16 @@ namespace UltimateCarry.Champions
             drawMenu.AddItem(dmgAfterComboItem);
 
 
-            _itemDFG = Utility.Map.GetMap().Type == Utility.Map.MapType.TwistedTreeline
-                ? new Items.Item(3188, 750)
-                : new Items.Item(3128, 750);
+          
 
             _spellQ = new Spell(SpellSlot.Q, 990);
             _spellW = new Spell(SpellSlot.W, 795 - 95);
             _spellE = new Spell(SpellSlot.E, 1000 - 10);
             _spellR = new Spell(SpellSlot.R, 1000 - 100);
 
-            _spellQ.SetSkillshot(.215f, 100, 1600f, false, SkillshotType.SkillshotLine);
+            _spellQ.SetSkillshot(.215f, 100, 1700f, false, SkillshotType.SkillshotLine);
             _spellW.SetSkillshot(.71f, _spellW.Range, float.MaxValue, false, SkillshotType.SkillshotLine);
-            _spellE.SetSkillshot(.23f, 60, 1500f, true, SkillshotType.SkillshotLine);
+            _spellE.SetSkillshot(.23f, 60, 1600f, true, SkillshotType.SkillshotLine);
 
             Utility.HpBarDamageIndicator.DamageToUnit = GetComboDamage;
             Utility.HpBarDamageIndicator.Enabled = dmgAfterComboItem.GetValue<bool>();
