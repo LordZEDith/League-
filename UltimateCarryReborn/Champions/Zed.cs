@@ -18,7 +18,7 @@ namespace UltimateCarry.Champions
         public bool CloneWCreated;
         public bool CloneWFound;
         public int CloneWTick;
-        public int Delay2 = 300;
+        public int Delay2 = 600;
         public int DelayTick2;
         public Spell E;
         public Spell Q;
